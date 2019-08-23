@@ -1,0 +1,46 @@
+#1.yml文件的写法，k: v键值对,注意冒号后面需要加空格
+#2.yml是大小写敏感的
+#3.yml 里 ""不会转义特殊字符,''会转义特殊字符
+#4.list的写法
+# 写法1
+# anim
+#   - cat
+#   - dog
+# 写法2
+# anim: [cat,dog]
+#
+#server:
+#  port: 8082
+#  servlet:
+#    context-path: /world
+
+#在yml中配置person
+#person:
+#    lastName: zhangsan
+#    age:  20
+#    boss: false
+#    birth: 2017/12/12
+#    maps: {k1: v1,k2: v2}
+#    lists:
+#      - lisi
+#      - wangwu
+#    dog:
+#      name: dog
+#      age: 5
+spring:
+  profiles:
+    active: prod #指定激活哪个文件
+
+---
+#开发环境
+server:
+  port: 8083
+spring:
+  profiles: dev
+
+---
+#生产环境
+server:
+  port: 8084
+spring:
+  profiles: prod

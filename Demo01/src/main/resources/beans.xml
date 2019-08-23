@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 通过配置文件配置bean 相当于注解的@Configurtion -->
+    <bean id="cat" class="com.example.demo01.bean.Cat">
+        <property name="name" value="tom"></property>
+    </bean>
+</beans>
