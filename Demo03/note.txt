@@ -1,0 +1,33 @@
+========演示SpringBoot的Web项目=============
+
+1.当需要集成Html,css,js时一些配置的方式参考WebMvcAutoConfiguration,WebMvcProperties,ResourceProperties
+
+2./**访问当前项目的任何资源(静态资源的文件夹)
+classpath:/META-INF/resources/
+classpath:/resources/
+classpath:/static/
+classpath:/public/
+/
+
+localhost:8080/abc ===>去静态资源文件夹里找abc
+
+3.欢迎页:静态资源文件夹下的所有index.html;被"/**"映射
+localhost:8080/ 找index.html
+
+4.网页选项卡的小图标
+/resources/resources/***.ico
+
+5.SpringBoot使用模板引擎
+Freemarker，Thymeleaf(SpringBoot推荐)
+
+
+1.先引入依赖
+<!-- 引入thymeleaf -->
+<dependency>
+   <groupId>org.springframework.boot</groupId>
+   <artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+
+2.在html页面的html标签中加入命名空间 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
