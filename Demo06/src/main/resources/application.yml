@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource #不用SpringBoot默认的数据源,用阿里巴巴的DruidDataSource
+
+    #下面这些配置需要在定义一个Config类才能生效@See DruidConfig
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml # 指定mybatis-config.xml的位置
+  mapper-locations: classpath:mybatis/mapper/*.xml #制mybatis映射文件的位置
+
+
+    #SpringBoot自动建表
+#    schema:
+#      - classpath:sql/employee.sql
+#      - classpath:sql/department.sql
+#    #SpringBoot2.x必须制定这个属性才能自动建表
+#    initialization-mode: always
+
+
