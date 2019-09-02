@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author xuchao
  * @date 2019-08-31 -16:20
@@ -28,6 +30,12 @@ public class UserController {
     public User saveUser(User user){
         userRepository.save(user);
         return user;
+    }
+
+
+    @GetMapping("/userList")
+    public List<User> userList(){
+        return userRepository.userList();
     }
 
 
