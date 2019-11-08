@@ -1,0 +1,5 @@
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    com.example.loggindemo.dao: trace #指定不包的日志级别
+    com.example.loggindemo.service: info
